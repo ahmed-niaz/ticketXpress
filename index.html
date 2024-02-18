@@ -99,6 +99,7 @@
           Here!
         </p>
         <button
+          id="buyTicket"
           class="btn border-none bg-[#1DD100] text-[#030712] font-extrabold text-sm lg:text-xl text-center mt-4 lg:mt-8 mb-8 lg:mb-28"
         >
           Buy Tickets
@@ -155,6 +156,7 @@
         </div>
       </section>
       <section
+        id="ticketCounter"
         class="lg:mt-32 border-t-2 rounded-t-[88px] border-[#1DD100] bg-[#F7F8F8] p-40"
       >
         <h2 class="mt-28 text-center text-5xl font-extrabold">
@@ -193,7 +195,9 @@
                     <span
                       ><img src="./assets/images/seat-green.png" alt="seat"
                     /></span>
-                    <span class="text-2xl font-bold">40</span>
+                    <span id="available-seat" class="text-2xl font-bold"
+                      >40</span
+                    >
                     Seats left
                   </button>
                 </div>
@@ -226,7 +230,7 @@
               <!-- route end -->
             </div>
             <!-- left sides end -->
-            <div class="">
+            <div>
               <img src="./assets/images/info-devider.png" alt="divider" />
             </div>
             <!-- right side start -->
@@ -267,63 +271,323 @@
               <!-- seat start -->
               <div class="grid grid-cols-12 gap-14 mt-5">
                 <div class="col-span-2">
-                  <p class="text-center gap-y-10 p-4 font-extrabold text-xl">A</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">B</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">C</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">D</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">E</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">F</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">G</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">H</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">I</p>
-                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">J</p>
+                  <p class="text-center gap-y-10 p-4 font-extrabold text-xl">
+                    A
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    B
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    C
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    D
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    E
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    F
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    G
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    H
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    I
+                  </p>
+                  <p class="text-center p-4 gap-y-10 font-extrabold text-xl">
+                    J
+                  </p>
                 </div>
                 <div class="col-span-5">
                   <div class="grid grid-cols-2 gap-y-4 gap-x-2">
-                    <button class="btn btn-active font-extrabold text-xl">A1</button>
-                    <button class="btn btn-active font-extrabold text-xl">A2</button>
-                    <button class="btn btn-active font-extrabold text-xl">B1</button>
-                    <button class="btn btn-active font-extrabold text-xl">B2</button>
-                    <button class="btn btn-active font-extrabold text-xl">C1</button>
-                    <button class="btn btn-active font-extrabold text-xl">C2</button>
-                    <button class="btn btn-active font-extrabold text-xl">D1</button>
-                    <button class="btn btn-active font-extrabold text-xl">D2</button>
-                    <button class="btn btn-active font-extrabold text-xl">E1</button>
-                    <button class="btn btn-active font-extrabold text-xl">E2</button>
-                    <button class="btn btn-active font-extrabold text-xl">F1</button>
-                    <button class="btn btn-active font-extrabold text-xl">F2</button>
-                    <button class="btn btn-active font-extrabold text-xl">G1</button>
-                    <button class="btn btn-active font-extrabold text-xl">G2</button>
-                    <button class="btn btn-active font-extrabold text-xl">H1</button>
-                    <button class="btn btn-active font-extrabold text-xl">H2</button>
-                    <button class="btn btn-active font-extrabold text-xl">I1</button>
-                    <button class="btn btn-active font-extrabold text-xl">I2</button>
-                    <button class="btn btn-active font-extrabold text-xl">J1</button>
-                    <button class="btn btn-active font-extrabold text-xl">J2</button>
+                    <button
+                      id="A1"
+                      onclick='ticketDetails("A1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      A1
+                    </button>
+                    <button
+                      id="A2"
+                      onclick='ticketDetails("A2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      A2
+                    </button>
+                    <button
+                      id="B1"
+                      onclick='ticketDetails("B1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      B1
+                    </button>
+                    <button
+                      id="B2"
+                      onclick='ticketDetails("B2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      B2
+                    </button>
+                    <button
+                      id="C1"
+                      onclick='ticketDetails("C1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      C1
+                    </button>
+                    <button
+                      id="C2"
+                      onclick='ticketDetails("C2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      C2
+                    </button>
+                    <button
+                      id="D1"
+                      onclick='ticketDetails("D1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      D1
+                    </button>
+                    <button
+                      id="D2"
+                      onclick='ticketDetails("D2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      D2
+                    </button>
+                    <button
+                      id="E1"
+                      onclick='ticketDetails("E1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      E1
+                    </button>
+                    <button
+                      id="E2"
+                      onclick='ticketDetails("E2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      E2
+                    </button>
+                    <button
+                      id="F1"
+                      onclick='ticketDetails("F1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      F1
+                    </button>
+                    <button
+                      id="F2"
+                      onclick='ticketDetails("F2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      F2
+                    </button>
+                    <button
+                      id="G1"
+                      onclick='ticketDetails("G1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      G1
+                    </button>
+                    <button
+                      id="G2"
+                      onclick='ticketDetails("G2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      G2
+                    </button>
+                    <button
+                      id="H1"
+                      onclick='ticketDetails("H1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      H1
+                    </button>
+                    <button
+                      id="H2"
+                      onclick='ticketDetails("H2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      H2
+                    </button>
+                    <button
+                      id="I1"
+                      onclick='ticketDetails("I1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      I1
+                    </button>
+                    <button
+                      id="I2"
+                      onclick='ticketDetails("I2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      I2
+                    </button>
+                    <button
+                      id="I1"
+                      onclick='ticketDetails("I1")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      J1
+                    </button>
+                    <button
+                      id="J2"
+                      onclick='ticketDetails("J2")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      J2
+                    </button>
                   </div>
                 </div>
                 <div class="col-span-5">
                   <div class="grid grid-cols-2 gap-y-4 gap-x-2">
-                    <button class="btn btn-active font-extrabold text-xl">A3</button>
-                    <button class="btn btn-active font-extrabold text-xl">A4</button>
-                    <button class="btn btn-active font-extrabold text-xl">B3</button>
-                    <button class="btn btn-active font-extrabold text-xl">B4</button>
-                    <button class="btn btn-active font-extrabold text-xl">C3</button>
-                    <button class="btn btn-active font-extrabold text-xl">C4</button>
-                    <button class="btn btn-active font-extrabold text-xl">D3</button>
-                    <button class="btn btn-active font-extrabold text-xl">D4</button>
-                    <button class="btn btn-active font-extrabold text-xl">E3</button>
-                    <button class="btn btn-active font-extrabold text-xl">E4</button>
-                    <button class="btn btn-active font-extrabold text-xl">F3</button>
-                    <button class="btn btn-active font-extrabold text-xl">F4</button>
-                    <button class="btn btn-active font-extrabold text-xl">G3</button>
-                    <button class="btn btn-active font-extrabold text-xl">G4</button>
-                    <button class="btn btn-active font-extrabold text-xl">H3</button>
-                    <button class="btn btn-active font-extrabold text-xl">H4</button>
-                    <button class="btn btn-active font-extrabold text-xl">I3</button>
-                    <button class="btn btn-active font-extrabold text-xl">I4</button>
-                    <button class="btn btn-active font-extrabold text-xl">J3</button>
-                    <button class="btn btn-active font-extrabold text-xl">J4</button>
+                    <button
+                      id="A3"
+                      onclick='ticketDetails("A3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      A3
+                    </button>
+                    <button
+                      id="A4"
+                      onclick='ticketDetails("A4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      A4
+                    </button>
+                    <button
+                      id="B3"
+                      onclick='ticketDetails("B3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      B3
+                    </button>
+                    <button
+                      id="B4"
+                      onclick='ticketDetails("B4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      B4
+                    </button>
+                    <button
+                      id="C3"
+                      onclick='ticketDetails("C3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      C3
+                    </button>
+                    <button
+                      id="C4"
+                      onclick='ticketDetails("C4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      C4
+                    </button>
+                    <button
+                      id="D3"
+                      onclick='ticketDetails("D3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      D3
+                    </button>
+                    <button
+                      id="D4"
+                      onclick='ticketDetails("D4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      D4
+                    </button>
+                    <button
+                      id="E3"
+                      onclick='ticketDetails("E3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      E3
+                    </button>
+                    <button
+                      id="E4"
+                      onclick='ticketDetails("E4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      E4
+                    </button>
+                    <button
+                      id="F3"
+                      onclick='ticketDetails("F3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      F3
+                    </button>
+                    <button
+                      id="F4"
+                      onclick='ticketDetails("F4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      F4
+                    </button>
+                    <button
+                      id="G3"
+                      onclick='ticketDetails("G3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      G3
+                    </button>
+                    <button
+                      id="G4"
+                      onclick='ticketDetails("G4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      G4
+                    </button>
+                    <button
+                      id="H3"
+                      onclick='ticketDetails("H3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      H3
+                    </button>
+                    <button
+                      id="H4"
+                      onclick='ticketDetails("H4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      H4
+                    </button>
+                    <button
+                      id="I3"
+                      onclick='ticketDetails("I3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      I3
+                    </button>
+                    <button
+                      id="I4"
+                      onclick='ticketDetails("I4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      I4
+                    </button>
+                    <button
+                      id="J3"
+                      onclick='ticketDetails("J3")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      J3
+                    </button>
+                    <button
+                      id="J4"
+                      onclick='ticketDetails("J4")'
+                      class="btn-green btn btn-active font-extrabold text-xl"
+                    >
+                      J4
+                    </button>
                   </div>
                 </div>
               </div>
@@ -340,31 +604,31 @@
                   <h4>Class</h4>
                   <h4>Price</h4>
                 </div>
+                <div id="ticketConfirmation"></div>
                 <div class="border-dashed text-[#03071233] border-2"></div>
                 <div class="flex justify-between">
                   <h2 class="text-xl font-bold">Total Price</h2>
-                  <h2 class="text-xl font-semibold">
-                    BDT <span id="totalPrice"></span>
-                  </h2>
+                  
+                    <h1 class="text-xl font-semibold" id="totalPrice">BDT 0</h1>
                 </div>
                 <div class="flex items-center w-full">
                   <input
-                    id="cupon"
+                    id="coupon"
                     placeholder="Have any coupon ?"
                     class="outline-none rounded-l-md w-full py-2 px-2"
                     type="text"
                   />
-                  <button
-                    id="Button"
-                    class="px-3 rounded-r-md py-2 bg-green-500"
+                  <button onclick="promoOffers()"
+                    id="apply-btn"
+                    class="px-3 rounded-r-md py-2 bg-green-500 text-white font-bold"
                   >
                     Apply
                   </button>
                 </div>
                 <div class="flex justify-between">
                   <h2 class="text-xl font-bold">Grand Total</h2>
-                  <h2 class="text-xl font-semibold">
-                    BDT <span id="totalPrice"></span>
+                  <h2 id="grandTotal" class="text-xl font-semibold">
+                    BDT 0
                   </h2>
                 </div>
               </div>
@@ -437,8 +701,10 @@
         </div>
         <div class="border-2 border-[#fff] border-dashed mt-10"></div>
         <div class="flex justify-between mt-8">
-          <div >
-            <p class="text-white">@All rights reserved, TicketXpress services limited.2024</p>
+          <div>
+            <p class="text-white">
+              @All rights reserved, TicketXpress services limited.2024
+            </p>
           </div>
           <div class="flex gap-8 text-white">
             <p>Terms & condition</p>
@@ -448,5 +714,8 @@
         </div>
       </div>
     </footer>
+    <script src="./app.js"></script>
   </body>
 </html>
+
+
