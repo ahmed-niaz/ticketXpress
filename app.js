@@ -111,4 +111,5 @@ function popupClose() {
   footer.classList.remove(`hidden`)
   const ticketCounter = document.querySelector(`#ticketCounter`);
   ticketCounter.scrollIntoView({ behavior: "smooth" });
+  location.reload();
 }
